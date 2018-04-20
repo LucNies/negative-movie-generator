@@ -1,0 +1,10 @@
+# Exclude imdb data set, download from here: http://ai.stanford.edu/~amaas/data/sentiment/
+/aclimdb/*
+
+# Exclude trained models
+/models/*
+*.hdf5
+
+# Exclude pycharm stuff
+./idea/*
+__pychache__/*
