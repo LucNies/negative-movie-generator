@@ -5,6 +5,7 @@
 /models/*
 *.hdf5
 
-# Exclude pycharm stuff
-./idea/*
-__pychache__/*
+# Exclude pycharm and jupyter checkpoints stuff
+/.idea/*
+__pycache__/*
+/.ipynb_checkpoints/*
