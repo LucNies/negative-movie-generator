@@ -6,6 +6,6 @@
 *.hdf5
 
 # Exclude pycharm and jupyter checkpoints stuff
-./idea/*
+/.idea/*
 __pycache__/*
-*.ipynb_checkpoints/*
+/.ipynb_checkpoints/*
