@@ -24,7 +24,7 @@ def make_model(input_shape, output_dim):
     return model
 
 
-def prepare_data(normalize = True):
+def prepare_data(normalize=True):
     # load ascii text and covert to lowercase
     filename = "wonderland.txt"
     raw_text = open(filename, encoding="utf8").read()
@@ -45,14 +45,17 @@ def prepare_data(normalize = True):
     for i in range(0, n_chars - seq_length, 1):
         seq_in = raw_text[i:i + seq_length]
         seq_out = raw_text[i + seq_length]
+
+
         dataX.append([char_to_int[char] for char in seq_in])
         dataY.append(char_to_int[seq_out])
     n_patterns = len(dataX)
     print("Total Patterns: ", n_patterns)
 
     dataX = np.reshape(dataX, (n_patterns, seq_length, 1))
-    if normalize:
-        dataX = dataX / float(n_vocab)
+    #if normalize:
+    #   dataX = dataX / float(n_vocab)
+    dataX = utils.to_categorical(dataX)
     dataY = utils.to_categorical(dataY)
 
     return raw_text, chars, dataX, dataY
@@ -108,5 +111,5 @@ def generate():
 
 
 if __name__ == "__main__":
-    rrrtrain()
+    train()
     generate()
