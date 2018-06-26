@@ -15,8 +15,6 @@ def prepare_imdb(word_to_id, id_to_word):
     postive = x_train[y_train]
     first = postive[0]
     first_words = [id_to_word[_id] for _id in first]
-    embed()
-
 
     return x_train, y_train, x_test, y_test
 
